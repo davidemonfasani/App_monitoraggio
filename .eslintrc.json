@@ -5,7 +5,7 @@
     {
       "files": ["*.ts"],
       "parserOptions": {
-        "project": ["./App_monitoraggio/tsconfig.json"],
+        "project": ["./tsconfig.json"],
         "createDefaultProgram": true
       },
       "extends": [
