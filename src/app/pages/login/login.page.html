@@ -13,7 +13,7 @@
     <div class="login-container">
       <h2>Login</h2>
   
-      <form>
+      <form [formGroup]="loginForm" (ngSubmit)="effettuaLogin()">
         <ion-item>
           <ion-label position="floating">Username</ion-label>
           <ion-input type="text" name="username" ></ion-input>
@@ -21,7 +21,7 @@
   
         <ion-item>
           <ion-label position="floating">Password</ion-label>
-          <ion-input type="password" name="password" ></ion-input>
+          <ion-input type="password" name="password"    formControlName="password"></ion-input>
         </ion-item>
   
         <ion-button expand="full" (click)="effettuaLogin()">Login</ion-button>
