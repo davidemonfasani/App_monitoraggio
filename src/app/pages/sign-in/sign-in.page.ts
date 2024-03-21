@@ -10,8 +10,7 @@ export class SignInPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
-    console.log("signIn")
+    console.log("sign_in")
   }
 
 }
