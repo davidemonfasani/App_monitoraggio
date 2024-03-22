@@ -10,4 +10,46 @@
       <ion-title size="large">signIn</ion-title>
     </ion-toolbar>
   </ion-header>
+  <div class="Form-container">
+    <h2>signIn</h2>
+    <!--
+    <div *ngIf="auth.errorMessage$ | async as errorMessage">
+      <div class="alert alert-danger">
+        {{ errorMessage }}
+      </div>
+    </div>
+    -->
+    <img *ngIf="imageSrc" [src]="imageSrc" alt="Selected Image" />
+
+    <form [formGroup]="signInForm" (ngSubmit)="effettuasignIn()">
+      <ion-item>
+        <ion-label position="floating">Nome</ion-label>
+        <ion-input type="nome" name="nome" formControlName="nome"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Cognome</ion-label>
+        <ion-input type="cognome" name="cognome" formControlName="cognome"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" name="email" formControlName="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" name="password" formControlName="password"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Foto</ion-label>
+        <input type="file" (change)="onFileChange($event)" />
+      </ion-item>
+      
+
+
+      <ion-button type="submit" expand="full" [disabled]="!signInForm.valid">signIn</ion-button>
+    </form>
+    <p>Non sei registrato? <ion-label class="fakelink" (click)="goLogin()">Login</ion-label></p>
+  </div>
 </ion-content>
